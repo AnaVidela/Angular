@@ -26,11 +26,15 @@ export class TaskService {
   }
 
   deleteTask(task:Task): Observable<Task>{
+    // para eliminar task de db.json
+    //no funciona
     const url= `s{this.apiUrl}/s{task.id}` ;
     return this.http.delete<Task>(url)
   }
 
   updateTaskReminder (task:Task): Observable<Task> {
+    // para cambiar el estado de true/false en db.json
+    //no funciona
     const url =	`s{this.apiUrl}/s{task.id}`
     return this.http.put<Task>(url, task, httpOptions)
   }
